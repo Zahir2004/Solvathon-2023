@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+  <link href="/static/css/styles.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <title>Files Upload and Download The Assignment</title>
+</head>
+
+<body class="sb-nav-fixed">
+  <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="teacher_dashboard.php">GIET University</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+        class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> -->
+        <!-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
+      </div>
+    </form>
+    <!-- Navbar-->
+
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+      <li class="nav-item dropdown">
+        <!-- <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"> -->
+        <a style="background-color:#00ced1; outline: none;border:none;" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <b><strong>
+		Name
+            </strong></b>
+        </a>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+        <div class="sb-sidenav-menu" style="background-color:#343a40;">
+          <div class="nav">
+            <!-- <div class="sb-sidenav-menu-heading">Core</div> -->
+            <a class="nav-link" style="
+                        background-color: #00ced1;
+                        font-weight: bold;
+                        " href="teacher_dashboard.php">
+              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+              Dashboard
+            </a>
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+              aria-expanded="false" aria-controls="collapsePages">
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div id="layoutSidenav_content">
+      <main class="m-3">
+        <div class="container">
+          <h1 class="mt-4">Create Assignments</h1>
+        </div>
+        <div class="container h-100">
+          <div class='alert alert-<?php echo $color;?> alert-dismissible fade show' role='alert'>
+            <strong>
+		Uploaded Successfully
+            </strong>
+            <a href="/teacher_assign"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </a>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+          </div>
+   
+          <form class="mt-4 h-100" action="/create_assign_new" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Title</label>
+              <input placeholder="Add title" type="text" name="tile" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Section</label>
+              <!-- <input type="text" name="tile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+              <select class="form-control" name="section" id="section" style="
+              padding-left: 10px;
+              padding-right: 171px;
+              padding-bottom: 3px;">
+                <option select required>Select section</option>
+                	<option>a</option>
+			<option>j</option>
+			<option>i</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Id</label>
+              <select class="form-control" name="sid" id="ID" style="
+              padding-left: 10px;
+             padding-right: 210px;
+            padding-bottom: 3px;">
+                <option value="sid">ID</option>
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Subject Name</label>
+              <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
+              <select class="form-control" name="sname" id="sname" style="
+                padding-left: 10px;
+                padding-right: 135px;
+                padding-bottom: 3px;">
+
+                <option value="sname">Select subject name</option>
+              
+                <option value=">Softwae Engineering</option>
+		<option value=">Operating System</option>
+		<option value="">OOPs Using Java</option>
+              </select>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Deadline</label>
+              <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
+              <input class="form-control" type="date" name="date" placeholder="Due Date" required>
+            </div>
+
+
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Upload File</label>
+              <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
+              <input class="form-control" type="file" name="myfile">
+            </div>
+            <div class="container w-100 d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary" name="save">Upload Assignment</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    </main>
+  </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+  <script src="assets/demo/chart-area-demo.js"></script>
+  <script src="assets/demo/chart-bar-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+  <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>
